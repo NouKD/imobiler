@@ -1,0 +1,366 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+a, a:hover{
+    text-decoration: none;
+}
+
+p{
+    font-weight: 200;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+}
+
+/**************mini-nav********************/
+/*******************************************/
+
+.mini-nav{
+    padding: 20px 0;
+}
+
+.mini-nav p{
+    font-weight: bold;
+    color: #3f3a64;
+}
+
+.mini-nav span a{
+    font-weight: bold;
+    color: #858585; 
+    transition: all .3s ease-in-out; 
+}
+
+.mini-nav span a:hover{
+    font-weight: bold;
+    color: #ff9933;  
+}
+
+/**************Div about********************/
+/*******************************************/
+
+.about{
+    background-color: #f7f7f7;
+    padding: 60px 0;
+}
+
+.about .about--first{
+    background-color: #fff;
+    box-shadow: 0px 9px 24px 5px rgba(0,0,0,0.04);
+}
+
+
+.about .about--first .part--left{
+    padding: 60px ;
+}
+
+
+.title h6{
+    color: #858585;
+    font-weight: bold;
+}
+
+.title h3{
+    color: #3f3a64;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.about .about--first .part--left h5{
+    color: #3f3a64;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.about .about--first .part--left p{
+    color: #858585;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.about .about--first .part--left .player a{
+    color: #3f3a64;
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+}
+
+.about .about--first .part--left .player a:hover{
+    color: #ff9933;
+}
+
+.about .features{
+    margin-top: 60px;
+}
+
+.about .features .card--features{
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.about .features .card--features .icon{
+    font-size: 40px ;
+    color: #ff9933;
+    margin-bottom:1rem;
+}
+
+.about .features .card--features a{
+    color: #3f3a64;
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+    font-weight: bold;
+}
+
+.about .features .card--features a:hover{
+    color: #ff9933;
+}
+
+.about .features .card--features p{
+    color: #858585;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 20px;
+}
+
+.why--us{
+    padding: 90px 0;
+}
+
+.why--us .part--left{
+    padding: 20px;
+}
+
+.why--us .part--left h5{
+    color: #3f3a64;
+    font-size: 20px;
+    margin-top: 10px;
+    line-height: 30px;
+}
+
+.why--us .part--left p{
+    color: #858585;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.team{
+    background-color: #f7f7f7;
+    padding: 60px 0;
+}
+
+.team .card--team{
+    box-shadow: 0px 9px 24px 5px rgba(0,0,0,0.04);
+    margin-bottom: 10px;
+}
+
+.team .card--team .illustration img{
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.team .card--team .description{
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.team .card--team .description p{
+    color: #858585;
+    font-size: 20px;
+}
+
+.team .card--team .description button{
+    border: none;
+    padding: 10px 30px;
+    border-radius:30px;
+    cursor: pointer;
+    background-color: #ff9933;
+    color: #fff;
+    transition: all .3s ease-in-out;
+    outline: none;
+}
+
+.team .card--team .description button:hover{
+    background-color: #fff;
+    border: 1px solid #ff9933;
+    color: #ff9933;
+}
+
+.team .card--team .description h4 ,h5{
+    color: #3f3a64;
+}
+
+.stats{
+    background-size: cover;
+    background-image: linear-gradient(to right, rgba(25, 25, 25, 0.7), rgba(0, 0, 0, 0.7)), url(../image/l2.jpg);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 39px 0;
+}
+
+.stats .card--counter{
+    margin-bottom: 20px;
+}
+
+.stats .card--counter h3{
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.stats .card--counter p{
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.listing{
+    background-color: #f7f7f7;
+    padding: 60px 0;
+}
+
+.listing .card--listing{
+    border-radius:5px;
+    box-shadow: 0px 9px 24px 5px rgba(0,0,0,0.04); 
+    margin: 10px 0;
+}
+
+.listing .card--listing .description{
+    padding: 20px;
+    background-color: #fff;
+}
+
+.listing .card--listing .illustration img{
+    border-radius: 5px 5px 0 0;
+}
+
+.listing .card--listing .illustration .rent--buy{
+    position: absolute;
+    top: 30px ;
+    left: 30px;
+}
+
+.listing .card--listing .illustration .rent--buy span{
+    padding: 5px;
+    background-color: #858585;
+    color: white;
+    border-radius: 5px;
+}
+
+.listing .card--listing .illustration .price{
+    position: relative;
+}
+
+.listing .card--listing .illustration .price h2{
+    position: absolute;
+    bottom:30px;
+    left: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.listing .card--listing .description p{
+    color: #858585;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.listing .card--listing .description h4 ,h5{
+    color: #3f3a64;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.listing .card--listing .description ul li{
+    display: inline-block;
+    margin-right: 20px;
+    color: #3f3a64;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.listing .card--listing .description ul li span i{
+    color: #858585; 
+}
+
+.listing .card--listing .description .seilor{
+    display: flex
+}
+
+.listing .card--listing .description .seilor img{
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+}
+
+.listing .card--listing .description .seilor .descrip-seilor{
+    margin-left: 10px;
+}
+
+.listing .card--listing .description .seilor .descrip-seilor h5{
+    font-size:17px ;
+}
+
+.listing .card--listing .description .seilor .descrip-seilor p{
+    font-size: 15px;
+}
+
+.pagination-profil{
+    height: 4.5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.circle{
+    background-color:white;
+    color: #ff9933;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid #ff9933;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px ;
+    transition: all .3s ease-in-out;
+}
+  
+.circle:hover{
+    background-color: #3f3a64;
+    cursor: pointer;
+} 
+
+/****************MEDIA QUERY************************/
+/*********************************************************/
+
+@media only screen and (max-width: 992px) {
+    
+}
+
+@media only screen and (max-width: 700px) {
+    .about .about--first .part--left{
+        padding: 20px;
+    }
+}
