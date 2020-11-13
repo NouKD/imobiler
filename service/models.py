@@ -3,6 +3,28 @@ from django.db import models
 # Create your models here.
 
 
+class Agent(models.Model):
+    nom = models.CharField(max_length=255)
+    image = models.ImageField()
+    fonction = models.CharField(max_length=255)
+    description =  models.TextField()
+    tel = models.CharField(max_length=40)
+
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+    status = models.BooleanField(default=True)
+
+
+    class Meta:
+
+        verbose_name = 'Agents'
+        verbose_name_plural = 'Agents'
+
+    def __str__(self):
+        return self.nom
+
+
+
 class Services(models.Model):
     nom = models.CharField(max_length=255)
     fonction = models.CharField(max_length=255)
@@ -61,6 +83,7 @@ class Projet(models.Model):
 
 
 class Propriete(models.Model):
+
     nom = models.CharField(max_length=255)
     titre = models.CharField(max_length=255)
     description = models.TextField()
@@ -74,6 +97,8 @@ class Propriete(models.Model):
     douche = models.IntegerField(null=True)
     chambre = models.IntegerField(null=True)
     garage = models.BooleanField(default=False)
+    statu = models.CharField(max_length=20)
+
 
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)

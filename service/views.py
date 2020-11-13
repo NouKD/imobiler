@@ -13,4 +13,10 @@ def detail(request):
     datas = {
 
     }
-    return render(request, 'pages/detail.html', datas)  
+    return render(request, 'pages/details.html', datas)
+
+def ajout(request):
+    datas = {
+
+    }
+    return render(request, 'pages/ajouter.html', datas)      

@@ -19,8 +19,6 @@ class Presentation(models.Model):
         return self.nom
 
 
-
-
 class SocialAccount(models.Model):
     ICONS = [
         ("facebook", "fa-facebook-f"),
