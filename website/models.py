@@ -21,10 +21,10 @@ class Presentation(models.Model):
 
 class SocialAccount(models.Model):
     ICONS = [
-        ("facebook", "fa-facebook-f"),
-        ("instagram", "fa-instagram"),
-        ("google-plus", "fa-google-plus-g"),
-        ("linkedin", "fa-linkedin-in")
+        ("fa-facebook-f", "facebook"),
+        ("fa-instagram", "instagram"),
+        ("fa-google-plus-g", "google-plus"),
+        ("fa-linkedin-in", "linkedin")
     ]
     
     nom = models.CharField(max_length=255)

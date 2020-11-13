@@ -31,7 +31,7 @@ class ServicesAdmin(Action):
     list_display_links = ['nom']
     ordering = ['nom']
     list_per_page = 10
-    fieldsets = [('Info', {'fields': ['nom', 'description', 'foction']}),
+    fieldsets = [('Info', {'fields': ['nom', 'description', 'fonction']}),
                  ('Standard', {'fields': ['status']})
                  ]
 
@@ -47,7 +47,7 @@ class ProprieteAdmin(Action):
     list_display_links = ['nom']
     ordering = ['nom']
     list_per_page = 10
-    fieldsets = [('Info', {'fields': ['nom', 'superficie', 'douche', 'chambre', 'description', 'image', 'quartier', 'situation', 'comentaire']}),
+    fieldsets = [('Info', {'fields': ['nom', 'superficie', 'douche', 'chambre', 'description', 'image', 'quartier', 'situation', 'commentaire']}),
                  ('Standard', {'fields': ['status']})
                  ]
 
