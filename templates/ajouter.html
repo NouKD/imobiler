@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>GNBS Admin</title>
+    <link rel="icon" type="image/x-icon" href="../image/favico.png">
+
+</head>
+<body>
+
+
+        <div class="conteneur">
+                <div class="contactez-nous-contact-form contact Formul">
+                    <form class="contact-form" action="traitement.php?action=ajouter" method="POST" role="form" enctype="multipart/form-data">
+                         <h3 class="contact-form-titre">AJOUT D'UN ARTICLE</h3>
+
+                         <div class="nom">
+
+                             <input type="text" id="name" name="nom" tabindex="1"  title="Veuillez renseigner le nom" x-moz-errormessage="Veuillez renseigner le nom." required placeholder="Nom " class="form-control" required>
+                         </div>
+                                  <h3 class="contact-form-titre left">Status</h3>
+                         <div class="critere">
+                            <p>
+                                <input type="radio" id="vente"  name="critere"  value="vente" >
+                                <label  for="vente">Vente</label>
+
+                                <input type="radio" id="louer"  name="critere"   value="louer">
+                                <label for="louer">Louer</label>
+
+                            </p>
+
+                         </div>
+                         <h3 class="contact-form-titre left">Prix</h3>
+                         <div class="prix">
+                            <p>
+                                <input type="number" id="prix"  name="prix" required value="">
+                                <label  for="prix"> Fcfa</label>
+
+                            </p>
+
+                         </div>
+                                   <h3 class="contact-form-titre left">Type de Logement</h3>
+                         <div class="logement">
+                            <p>
+
+                                <input type="radio" id="appartement"  name="logement"  value="appartement">
+                                <label  for="appartement">appartement</label>
+
+                                <input type="radio" id="villa"  name="logement"  value="villa">
+                                <label  for="villa">villa</label>
+
+                                <input type="radio" id="garage"  name="logement"  value="garage">
+                                <label  for="garage">garage</label>
+
+                                <input type="radio" id="immeuble"  name="logement"  value="immeuble">
+                                <label  for="immeuble">immeuble</label>
+
+                                <input type="radio" id="terrain"  name="logement"   value="terrain">
+                                <label  for="terrain">terrain</label>
+
+                                <input type="radio" id="propriete"  name="logement"  value="propriete">
+                                <label  for="propriete">propriete</label>
+
+                                <input type="radio" id="bureau"  name="logement"  value="bureau">
+                                <label  for="bureau">bureau</label>
+
+
+                                <input type="radio" id="entrepot"  name="logement"   value="entrepot">
+                                <label  for="entrepot">entrepot</label>
+                            </p>
+                         </div>
+                                <h3 class="contact-form-titre left">Article Image 1 </h3>
+                         <div>
+                            <p>
+                                <input type="file" class="file" name="image1" required>
+                            </p>
+
+                         </div>
+
+                                <h3 class="contact-form-titre left">Article Image 2 </h3>
+                         <div>
+                            <p>
+                                <input type="file" class="file" name="image2" required>
+                            </p>
+
+                         </div>
+
+                         <h3 class="contact-form-titre left">Article Image 3 </h3>
+                         <div>
+                            <p>
+                                <input type="file" class="file" name="image3" required>
+                            </p>
+
+                         </div>
+
+
+                         <h3 class="contact-form-titre left">Taille de la maison</h3>
+                         <div>
+                            <p>
+                                <input type="number" name="surface" required>
+                                <label  for="surface"> m2</label>
+                            </p>
+
+                         </div>
+
+                                <h3 class="contact-form-titre left">Garage</h3>
+                        <div>
+                            <p>
+                                <input type="radio" id="garage_oui"  name="Garage"  value="garage_oui">
+                                <label  for="garage_oui">Oui</label>
+
+                                <input type="radio" id="garage_non"  name="Garage"  value="garage_non">
+                                <label  for="garage_non">Non</label>
+                            </p>
+
+                         </div>
+                                   <h3 class="contact-form-titre left">Nombre de Piece</h3>
+                         <div class="piece">
+                            <p>
+                                <input type="radio" id="1"  name="piece"  value="1">
+                                <label  for="1">1 piece</label>
+
+                                <input type="radio" id="2"  name="piece"  value="2">
+                                <label  for="2">2 pieces</label>
+
+                                <input type="radio" id="3"  name="piece"  value="3">
+                                <label  for="3">3 pieces</label>
+
+                                <input type="radio" id="4"  name="piece"  value="4">
+                                <label  for="4">4 pieces</label>
+
+                                <input type="radio" id="5"  name="piece"  value="5">
+                                <label  for="5">5 pieces</label>
+                            </p>
+                         </div>
+                                 <h3 class="contact-form-titre left">ville</h3>
+                         <div class="ville">
+                            <p>
+
+                                <input type="radio" id="Abidjan"  name="ville"  value="Abidjan">
+                                <label  for="Abidjan">Abidjan</label>
+
+                                <input type="radio" id="Aboisso"  name="ville" value="Aboisso">
+                                <label  for="Aboisso">Aboisso</label>
+
+                                <input type="radio" id="Yamoussoukro"  name="ville" value="Yamoussoukro">
+                                <label  for="Yamoussoukro">Yamoussoukro</label>
+
+                                <input type="radio" id="Adzope"  name="ville"  value="Adzope">
+                                <label  for="Adzope">Adzopé</label>
+
+                                <input type="radio" id="Bouake"  name="ville" value="Bouake">
+                                <label  for="Bouake">Bouaké</label>
+
+                                <input type="radio" id="Odienne"  name="ville"  value="Odienne">
+                                <label  for="Odienne">Odienné</label>
+
+                                <input type="radio" id="Man"  name="ville" value="Man">
+                                <label  for="Man">Man</label>
+
+
+                                <input type="radio" id="Bouafle"  name="ville"  value="Bouafle">
+                                <label  for="Bouafle">Bouaflé</label>
+                            </p>
+                         </div>
+                         <h3 class="contact-form-titre left">Adresse</h3>
+                         <div class="adresse">
+                            <p>
+                                <input type="text" id="adresse"  name="adresse" required placeholder="adresse">
+
+                            </p>
+
+                         </div>
+
+                         <h3 class="contact-form-titre left">Agrements </h3>
+                         <div>
+                             <p>
+                                 <input type="checkbox" id="lave_vaisselle"  name="lave_vaisselle"  value="lave_vaisselle">
+                                 <label  for="lave_vaisselle">lave vaisselle</label>
+
+                                 <input type="checkbox" id="climatisation"  name="climatisation"  value="climatisation">
+                                 <label  for="climatisation">climatisation</label>
+
+                                 <input type="checkbox" id="revetement_de_sol"  name="revetement_de_sol"  value="revetement_de_sol">
+                                 <label  for="revetement_de_sol">revetement de sol</label>
+
+                                 <input type="checkbox" id="clinique_medicale"  name="clinique_medicale"  value="clinique_medicale">
+                                 <label  for="clinique_medicale">clinique medicale</label>
+
+                                 <input type="checkbox" id="armoires_encastrées"  name="armoires_encastrées"  value="armoires_encastrées">
+                                 <label  for="armoires_encastrées"> armoires_encastrées</label>
+                             </p>
+
+                          </div>
+                         <div class="form-group form_message">
+
+                             <label class="sr-only" for="descriptions">Votre message</label>
+                             <textarea id="descriptions" rows="7" tabindex="4" name="descriptions" type="textarea"  required placeholder="La description" class="form-control"></textarea>
+                         </div>
+                         <div class="form-group form_submit">
+
+                             <button class="btn btn-primary btn-block contact-form-submit envoyer" type="submit" name="envoyer" value="ajouter" tabindex="5">AJOUTER</button>
+                         </div>
+                     </form>
+                 </div>
+
+            </div>
+    </div>
+
+    </footer>
+    <script src="js/fontawesome-all.min.js"></script>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
