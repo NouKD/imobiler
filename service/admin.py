@@ -13,7 +13,7 @@ class AgentAdmin(Action):
     list_display_links = ['nom']
     ordering = ['nom']
     list_per_page = 10
-    fieldsets = [('Info', {'fields': ['nom', 'description', 'foction', 'tel', 'image']}),
+    fieldsets = [('Info', {'fields': ['nom', 'description', 'fonction', 'tel', 'image']}),
                  ('Standard', {'fields': ['status']})
                  ]
 

@@ -4,10 +4,10 @@ from django.contrib import admin
 
 class Action(admin.ModelAdmin):
 
-    date_hierarchy = 'date_add'
-    ordering = ('-date_update', )
-    list_filter = ('status', )
-    list_per_page = 50
+    #date_hierarchy = 'date_add'
+    #ordering = ('-date_update', )
+    #list_filter = ('status', )
+    #list_per_page = 50
 
     actions = ["activate", "deactivate"]
 
