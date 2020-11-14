@@ -26,7 +26,7 @@ class SocialAccount(models.Model):
         ("fa-google-plus-g", "google-plus"),
         ("fa-linkedin-in", "linkedin")
     ]
-    
+
     nom = models.CharField(max_length=255)
     lien = models.URLField()
     icon = models.CharField(choices=ICONS, max_length=20)
@@ -60,7 +60,7 @@ class SiteInfo(models.Model):
         verbose_name_plural = 'Site infos'
 
     def __str__(self):
-        return self.email        
+        return self.email
 
 class Contact(models.Model):
     message = models.TextField()
