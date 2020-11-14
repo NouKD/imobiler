@@ -6,14 +6,14 @@ from actions.action import Action
 # Register your models here.
 
 class ContactAdmin(Action):
-    list_display = ('nom', 'email', 'sujet','date_add', 'date_update', 'status')
+    list_display = ('nom', 'email','date_add', 'date_update', 'status')
     list_filter = ('nom', )
     search_fields = ('nom', )
     date_hierarchy = 'date_add'
     list_display_links = ['nom']
     ordering = ['date_add']
     list_per_page = 15
-    fieldsets = [('Info Contact', {'fields': ['nom', 'email', 'sujet', 'message']}),
+    fieldsets = [('Info Contact', {'fields': ['nom', 'email', 'message']}),
                  ('Standard', {'fields': ['status']})
                  ]
 
