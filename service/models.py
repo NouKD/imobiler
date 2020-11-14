@@ -67,7 +67,7 @@ class Projet(models.Model):
     nom = models.CharField(max_length=255)
     image = models.ImageField(upload_to="images/Services")
     description =  models.TextField()
-    cat_projet = models.ForeignKey(CatProjet, on_delete=models.CASCADE, related_name='Catprojet', null=True) 
+    cat_projet = models.ForeignKey(CatProjet, on_delete=models.CASCADE, related_name='Catprojet', null=True)
 
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
@@ -88,7 +88,9 @@ class Propriete(models.Model):
     titre = models.CharField(max_length=255)
     description = models.TextField()
     commentaire = models.TextField()
-    image = models.ImageField(upload_to='images/Propriete')
+    image1 = models.ImageField(upload_to='images/Propriete')
+    image2 = models.ImageField(upload_to='images/Propriete')
+    image3 = models.ImageField(upload_to='images/Propriete')
     ville = models.CharField(max_length=255)
     prix = models.FloatField(null=True)
     quartier = models.CharField(max_length=255)
@@ -103,7 +105,7 @@ class Propriete(models.Model):
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
     status = models.BooleanField(default=True)
-    
+
     class Meta:
 
         verbose_name = 'Propriete'

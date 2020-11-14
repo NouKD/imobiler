@@ -47,7 +47,7 @@ class ProprieteAdmin(Action):
     list_display_links = ['nom']
     ordering = ['nom']
     list_per_page = 10
-    fieldsets = [('Info', {'fields': ['nom', 'superficie', 'douche', 'chambre', 'description', 'image', 'quartier', 'situation', 'commentaire']}),
+    fieldsets = [('Info', {'fields': ['nom', 'superficie', 'douche', 'chambre', 'description', 'image1', 'image2', 'image3', 'quartier', 'situation', 'commentaire']}),
                  ('Standard', {'fields': ['status']})
                  ]
 
