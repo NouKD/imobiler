@@ -18,7 +18,7 @@ class AgentAdmin(Action):
                  ]
 
     def images_view(self, obj):
-        return mark_safe('<img src="{url}" style="height:50px; width:100px">'.format(url=obj.image.url))
+        return mark_safe('<img src="{url}" style="height:60px; width:50px">'.format(url=obj.image.url))
 
 
 
@@ -52,7 +52,7 @@ class ProprieteAdmin(Action):
                  ]
 
     def images_view(self, obj):
-        return mark_safe('<img src="{url}" style="height:50px; width:100px">'.format(url=obj.image.url))
+        return mark_safe('<img src="{url}" style="height:50px; width:100px">'.format(url=obj.image1.url))
 
 
 class CatProjetAdmin(Action):
