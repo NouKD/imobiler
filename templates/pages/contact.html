@@ -15,12 +15,13 @@
         <section class="left_yan">
             <h5>Entrer en contact</h5>
             <p>Votre adresse email ne sera pas publiée. Les champs requis sont indiqués *</p>
-            <form action="">
+            <form action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
                 <div class="yan_input">
-                    <input type="text" placeholder="Votre nom">
-                    <input type="email" placeholder="Email">
+                    {{ contact_form.nom }}
+                    {{ contact_form.email }}
                 </div>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                {{ contact_form.message }}
                 <input type="checkbox" class="yan_checkbox">
                 <p class="yan_special">Enregistrez mon nom, mon adresse e-mail et mon site Web dans ce navigateur pour la prochaine fois que je commenterai</p>
                 <button type="submit" class="btn_yan">Soumettre</button>

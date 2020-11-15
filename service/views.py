@@ -7,7 +7,7 @@ def listing(request):
     propriete = Propriete.objects.all().order_by('-date_update')[:6]
 
     datas = {
-        'proprietes' : propriete,
+        'propriete' : propriete,
     }
     return render(request, 'pages/listing.html', datas)
 

@@ -23,30 +23,33 @@
     <section class="listing">
         <div class="container">
            <div class="row">
+               
+               {% for propriete in propriete %}
+                                      
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
                   <a href="{% url 'detail' %}">
                     <div class="card--listing">
                         <div class="illustration">
-                            <img src="{% static 'images/l2.jpg' %}" alt="about img" class="img-fluide">
+                            <img src="{{ propriete.image1.url }}" alt="about img" class="img-fluide">
 
                             <div class="rent--buy">
-                                <span id="bl"> A Louer</span>
+                                <span id="bl">{{ propriete.statu }}</span>
 
                             </div>
 
                             <div class="price">
-                                <h2>250 000Fcfa</h2>
+                                <h2>{{ propriete.prix }}cfa</h2>
                             </div>
                         </div>
 
                         <div class="description ">
-                            <h4 class="team-name">Cottage villa</h4>
-                            <p>Abidjan, Cocody Angré djibi</p>
+                            <h4 class="team-name">{{ propriete.nom }}</h4>
+                            <p>{{ propriete.quartier }}</p>
 
                             <ul>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 3 chambres</span></li>
+                                <li><span><i class="fa fa-bed"></i>&nbsp; {{ propriete.chambre }} chambres</span></li>
                                 <li><span>&nbsp; &nbsp;</span></li>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 salon</span></li>
+                                <li><span><i class="fa fa-bed"></i>&nbsp; {{ propriete.douche }} salon</span></li>
 
                             </ul>
 
@@ -65,211 +68,7 @@
                     </div>
                     </a>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
-                  <a href="{% url 'detail' %}">
-                    <div class="card--listing">
-                        <div class="illustration">
-                            <img src="{% static 'images/l2.jpg' %}" alt="about img" class="img-fluide">
-
-                            <div class="rent--buy">
-
-                                <span>En Vente</span>
-                            </div>
-
-                            <div class="price">
-                                <h2>10 000 000Fcfa</h2>
-                            </div>
-                        </div>
-
-                        <div class="description ">
-                            <h4 class="team-name">Cottage villa</h4>
-                            <p>Unnamed Road, Vegas, NV 89103.</p>
-
-                            <ul>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 beds</span></li>
-                                  <li><span>&nbsp; &nbsp;</span></li>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 beds</span></li>
-                            </ul>
-
-
-                            <div class="seilor mt-4">
-                                <div class="img-seilor">
-                                    <img src="{% static 'images/team3.jpg' %}" alt="img-seilor" class="img-fluid">
-                                </div>
-
-                                <div class="descrip-seilor">
-                                    <h5>Laura Antiochus</h5>
-                                    <p>Selling agent</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
-                  <a href="{% url 'detail' %}">
-                    <div class="card--listing">
-                        <div class="illustration">
-                            <img src="{% static 'images/l2.jpg' %}" alt="about img" class="img-fluide">
-
-                            <div class="rent--buy">
-                                <span> A Louer</span>
-
-                            </div>
-
-                            <div class="price">
-                                <h2>$21,000,000</h2>
-                            </div>
-                        </div>
-
-                        <div class="description ">
-                            <h4 class="team-name">Cottage villa</h4>
-                            <p>Unnamed Road, Vegas, NV 89103.</p>
-
-                            <ul>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 beds</span></li>
-                                <li><span>&nbsp; &nbsp;</span></li>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 beds</span></li>
-                            </ul>
-
-
-                            <div class="seilor mt-4">
-                                <div class="img-seilor">
-                                    <img src="{% static 'images/team3.jpg' %}" alt="img-seilor" class="img-fluid">
-                                </div>
-
-                                <div class="descrip-seilor">
-                                    <h5>Laura Antiochus</h5>
-                                    <p>Selling agent</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
-                  <a href="{% url 'detail' %}">
-                    <div class="card--listing">
-                        <div class="illustration">
-                            <img src="{% static 'images/l2.jpg' %}" alt="about img" class="img-fluide">
-
-                            <div class="rent--buy">
-                                <span>En Vente</span>
-
-                            </div>
-
-                            <div class="price">
-                                <h2>$21,000,000</h2>
-                            </div>
-                        </div>
-
-                        <div class="description ">
-                            <h4 class="team-name">Cottage villa</h4>
-                            <p>Unnamed Road, Vegas, NV 89103.</p>
-
-                            <ul>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 beds</span></li>
-                              <li><span>&nbsp; &nbsp;</span></li>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 beds</span></li>
-                            </ul>
-
-
-                            <div class="seilor mt-4">
-                                <div class="img-seilor">
-                                    <img src="{% static 'images/team3.jpg' %}" alt="img-seilor" class="img-fluid">
-                                </div>
-
-                                <div class="descrip-seilor">
-                                    <h5>Laura Antiochus</h5>
-                                    <p>Selling agent</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
-                  <a href="{% url 'detail' %}">
-                    <div class="card--listing">
-                        <div class="illustration">
-                            <img src="{% static 'images/l2.jpg' %}" alt="about img" class="img-fluide">
-
-                            <div class="rent--buy">
-                                <span>A Louer</span>
-
-                            </div>
-
-                            <div class="price">
-                                <h2>$21,000,000</h2>
-                            </div>
-                        </div>
-
-                        <div class="description ">
-                            <h4 class="team-name">Cottage villa</h4>
-                            <p>Unnamed Road, Vegas, NV 89103.</p>
-
-                            <ul>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 beds</span></li>
-                                <li><span>&nbsp; &nbsp;</span></li>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 beds</span></li>
-                            </ul>
-
-
-                            <div class="seilor mt-4">
-                                <div class="img-seilor">
-                                    <img src="{% static 'images/team3.jpg' %}" alt="img-seilor" class="img-fluid">
-                                </div>
-
-                                <div class="descrip-seilor">
-                                    <h5>Laura Antiochus</h5>
-                                    <p>Selling agent</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
-                  <a href="{% url 'detail' %}">
-                    <div class="card--listing">
-                        <div class="illustration">
-                            <img src="{% static 'images/l2.jpg' %}" alt="about img" class="img-fluide">
-
-                            <div class="rent--buy">
-                                <span>A Louer</span>
-
-                            </div>
-
-                            <div class="price">
-                                <h2>$21,000,000</h2>
-                            </div>
-                        </div>
-
-                        <div class="description ">
-                            <h4 class="team-name">Cottage villa</h4>
-                            <p>Unnamed Road, Vegas, NV 89103.</p>
-
-                            <ul>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 beds</span></li>
-                                <li><span>&nbsp; &nbsp;</span></li>
-                                <li><span><i class="fa fa-bed"></i>&nbsp; 2 beds</span></li>
-                            </ul>
-
-
-                            <div class="seilor mt-4">
-                                <div class="img-seilor">
-                                    <img src="{% static 'images/team3.jpg' %}" alt="img-seilor" class="img-fluid">
-                                </div>
-
-                                <div class="descrip-seilor">
-                                    <h5>Laura Antiochus</h5>
-                                    <p>Selling agent</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
+                {% endfor %}
            </div>
            <!-- *********************** -->
            <div class="pagination-profil">
