@@ -54,7 +54,8 @@
             </li>
 
           </ul>
-          <form class="form-inline my-2 my-lg-0">
+          <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'search' %}">
+            {% csrf_token %}
             <input class="form-control mr-sm-2 " id="searchbar" type="search" placeholder="Logement ..." aria-label="Search" nam='search'>
             <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Recherche</button>
           </form>
@@ -97,9 +98,16 @@
         <p class="titlebas">S'inscrire aux Newsletters</p>
         <p>et recevez les dernières nouvelles et mises à jour</p>
         <div class="">
-          <form action="#" class="subscribe-form mt-4" method="post">
+          <form action="{% url 'newsletter' %}" class="subscribe-form mt-4" method="POST">
       <div class="form-group">
-        <input type="email" id="email" name="subscribe" placeholder="Enter your email" required="">
+        {% csrf_token %}
+
+        <input 
+        type="email" 
+        id="email" 
+        name="subscribe" 
+        placeholder="Enter your email" 
+        required>
         <button class="btn btn-style " id="emailbtn">S'abonnez</button>
       </div>
     </form>

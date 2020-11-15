@@ -38,10 +38,10 @@ def contact(request):
     }
     return render(request, 'pages/contact.html', datas)  
 
-def news_letter(request):
+def newsletter(request):
     if request.method == 'POST':
-        newsletter = request.POST.get('newsletter')
-        if newsletter:
-            nl = NewsLetter.objects.create(email=newsletter)
-            nl.save()
+        email = request.POST['newsletter']
+        if email:
+            new_email = NewsLetter.objects.create(email=email)
+            new_email.save()
     return redirect(request.META.get('HTTP_REFERER', '/'))        
