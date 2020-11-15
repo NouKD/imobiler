@@ -23,8 +23,6 @@ class Agent(models.Model):
     def __str__(self):
         return self.nom
 
-
-
 class Services(models.Model):
     nom = models.CharField(max_length=255)
     fonction = models.CharField(max_length=255)
@@ -39,6 +37,23 @@ class Services(models.Model):
 
         verbose_name = 'Service'
         verbose_name_plural = 'Services'
+
+    def __str__(self):
+        return self.nom
+
+class Types(models.Model):
+    nom = models.CharField(max_length=255)
+    
+
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+    status = models.BooleanField(default=True)
+
+
+    class Meta:
+
+        verbose_name = 'Type'
+        verbose_name_plural = 'Types'
 
     def __str__(self):
         return self.nom
@@ -88,6 +103,8 @@ class Propriete(models.Model):
     titre = models.CharField(max_length=255)
     description = models.TextField()
     commentaire = models.TextField()
+    types = models.ForeignKey(Types, on_delete=models.CASCADE, related_name='Type', null=True, blank=True)
+    agent = models.ForeignKey(Agent, on_delete=models.CASCADE, related_name='Agent', null=True, blank=True)
     image1 = models.ImageField(upload_to='images/Propriete')
     image2 = models.ImageField(upload_to='images/Propriete')
     image3 = models.ImageField(upload_to='images/Propriete')
@@ -99,7 +116,7 @@ class Propriete(models.Model):
     douche = models.IntegerField(null=True)
     chambre = models.IntegerField(null=True)
     garage = models.BooleanField(default=False)
-    statu = models.CharField(max_length=20)
+    statu = models.CharField(max_length=20) 
 
 
     date_add = models.DateTimeField(auto_now_add=True)

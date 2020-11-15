@@ -38,16 +38,28 @@ class ServicesAdmin(Action):
     def images_view(self, obj):
         return mark_safe('<img src="{url}" style="height:50px; width:100px">'.format(url=obj.image.url))
 
-
-class ProprieteAdmin(Action):
-    list_display = ('images_view','superficie', 'douche', 'chambre', 'nom', 'date_add','date_update', 'status')
+class TypesAdmin(Action):
+    list_display = ('nom', 'date_add', 'date_update', 'status')
     list_filter = ('nom', )
     search_fields = ('nom', )
     date_hierarchy = 'date_add'
     list_display_links = ['nom']
     ordering = ['nom']
     list_per_page = 10
-    fieldsets = [('Info', {'fields': ['nom', 'superficie', 'douche', 'chambre','prix', 'description', 'image1', 'image2', 'image3', 'quartier', 'situation', 'commentaire', 'statu']}),
+    fieldsets = [('Info ', {'fields': ['nom',]}),
+                 ('Standard', {'fields': ['status']})
+                 ] 
+
+
+class ProprieteAdmin(Action):
+    list_display = ('images_view','superficie', 'types', 'chambre', 'nom', 'date_add','date_update', 'status')
+    list_filter = ('nom', )
+    search_fields = ('nom', 'types' )
+    date_hierarchy = 'date_add'
+    list_display_links = ['nom']
+    ordering = ['nom']
+    list_per_page = 10
+    fieldsets = [('Info', {'fields': ['nom', 'superficie', 'douche', 'agent', 'chambre','prix', 'types', 'description', 'image1', 'image2', 'image3', 'quartier', 'situation', 'commentaire', 'statu']}),
                  ('Standard', {'fields': ['status']})
                  ]
 
@@ -92,6 +104,7 @@ def _register(model, admin_class):
     admin.site.register(model, admin_class)
 
 _register(models.Agent, AgentAdmin)
+_register(models.Types, TypesAdmin)
 _register(models.Services, ServicesAdmin)
 _register(models.CatProjet, CatProjetAdmin)
 _register(models.Projet, ProjetAdmin)

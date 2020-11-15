@@ -56,12 +56,12 @@
 
                             <div class="seilor mt-4">
                                 <div class="img-seilor">
-                                    <img src="{% static 'images/team3.jpg' %}" alt="img-seilor" class="img-fluid">
+                                    <img src="{{ propriete.agent.image.url }}" alt="img-seilor" class="img-fluid">
                                 </div>
 
                                 <div class="descrip-seilor">
-                                    <h5>Laura Antiochus</h5>
-                                    <p>Selling agent</p>
+                                    <h5>{{ propriete.agent.nom }}</h5>
+                                    <p>{{ propriete.agent.fonction }}</p>
                                 </div>
                             </div>
                         </div>
