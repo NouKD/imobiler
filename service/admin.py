@@ -46,7 +46,7 @@ class TypesAdmin(Action):
     list_display_links = ['nom']
     ordering = ['nom']
     list_per_page = 10
-    fieldsets = [('Info ', {'fields': ['nom',]}),
+    fieldsets = [('Info ', {'fields': ['nom', 'image']}),
                  ('Standard', {'fields': ['status']})
                  ] 
 

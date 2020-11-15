@@ -15,7 +15,7 @@ def listing(request, filtre=None, filtre_id=None):
     else:
         propriete_all = propriete
 
-    _paginator = Paginator(propriete_all, 4)
+    _paginator = Paginator(propriete_all, 6)
     page = request.GET.get('page')
 
     types = Types.objects.filter(status=True)
@@ -39,13 +39,15 @@ def listing(request, filtre=None, filtre_id=None):
 
 def detail(request,  propriete_id):
     propriete = get_object_or_404(Propriete, status=True, pk=propriete_id)
-    propriete_recent = Propriete.objects.filter(status=True).order_by('-date_update')[:4]
+    propriete_recent = Propriete.objects.filter(status=True).order_by('-date_update')[:6]
+    types = Types.objects.filter(status=True)[:4]
 
     datas = {
         'l_propriete': propriete,
         'next_propriete': propriete.get_previous_by_date_update,
         'prev_propriete': propriete.get_next_by_date_update,
         'propriete_recent': propriete_recent,
+        'types' : types,
     }
 
     return render(request, 'pages/details.html', datas)
@@ -57,20 +59,16 @@ def ajout(request):
     return render(request, 'pages/ajouter.html', datas)
 
 def search(request):
-    try:
-        request.POST['search']
-        assert len(request.POST['search']) >= 2
-    except Exception:
-        return redirect(request.META.get('HTTP_REFERER', '/'))
+    q = request.POST.get['q']
+    propriete = models.Propriete.objects.filter(
+        Q(types__icontains=q) | 
+        Q(description__icontains=q) | 
+        Q(ville__icontains=q) | 
+        Q(quartier__icontains=q)
+        )
 
-    q = request.POST['search']
-    propriete = Propriete.objects.filter(status=True)
-    propriete = propriete.filter(Q(titre__icontains=q) | Q(description__icontains=q) | Q(contenu__icontains=q))
-
-    data = {
-        'q': q,
+    datas = {
         'propriete': propriete,
-        'nombre_resultat': len(propriete),
     }
 
-    return render(request, 'pages/search.html', data)    
+    return render(request, 'pages/listing.html', data)

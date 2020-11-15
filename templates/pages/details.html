@@ -132,36 +132,17 @@
                             <div class="sidebar-title">
                                 <h4>Propriété similaires</h4>
                             </div>
-
+                            {% for types in types %}    
                             <article class="post">
                                  <!-- article 1 de la maison-->
-                                <figure class="post-thumb"><img src="{% static 'images/l1.jpg' %}" class=" radius-image" alt="">
+                                <figure class="post-thumb"><img src="{{ types.image.url }}" class=" radius-image" alt="">
                                 </figure>
-                                <div class="text"><a href="#blog-single">Why we are the best in the business
+                                <div class="text"><a href="{% url 'listing' 'types' types.id %}">{{ types.nom }}
                                     </a>
-                                    <div class="post-info">Sep 09, 2020 - 2 comments</div>
+                                    <div class="post-info">{{ types.date_add|date:'F d, Y'|title }} </div>
                                 </div>
                             </article>
-
-                            <article class="post">
-                                <!-- article 2 de la maison-->
-                                <figure class="post-thumb"><img src="{% static 'images/l2.jpg' %}" class="radius-image" alt="">
-                                </figure>
-                                <div class="text"><a href="#blog-single">Build your next landing page.
-                                    </a>
-                                    <div class="post-info">Sep 09, 2020 - 2 comments</div>
-                                </div>
-                            </article>
-
-                            <article class="post">
-                                <!-- article 3 de la maison-->
-                                <figure class="post-thumb"><img src="{% static 'images/l3.jpg' %}" class="radius-image" alt="">
-                                </figure>
-                                <div class="text"><a href="#blog-single">
-                                        Simply the best. Better than the rest.</a>
-                                    <div class="post-info">Sep 10, 2020 - 2 comments</div>
-                                </div>
-                            </article>
+                            {% endfor %}
 
                         </div>
 

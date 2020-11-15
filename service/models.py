@@ -43,7 +43,7 @@ class Services(models.Model):
 
 class Types(models.Model):
     nom = models.CharField(max_length=255)
-    
+    image = models.ImageField(null=True, blank=True)
 
     date_add = models.DateTimeField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
