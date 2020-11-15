@@ -27,7 +27,7 @@
                {% for propriete in propriete %}
                                       
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
-                  <a href="{% url 'detail' %}">
+                  <a href="{% url 'detail' propriete.id %}">
                     <div class="card--listing">
                         <div class="illustration">
                             <img src="{{ propriete.image1.url }}" alt="about img" class="img-fluide">

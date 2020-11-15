@@ -16,11 +16,11 @@
                 <ul class="blog-single-author-date align-items-center">
                     <li>
                         <!-- Acheter ou louer-->
-                        <div class="listing-category"><span>Acheter</span></div>
+                        <div class="listing-category"><span>{{ l_propriete.statu }}</span></div>
                     </li>
 
                     <!-- le temps de publication de l'article-->
-                    <li><span class="fa fa-clock-o"></span> il y a 5 Mois</li>
+                    <li><span class="fa fa-clock-o"></span> {{ l_propriete.date_add|date:'F d, Y'|title }}</li>
 
                     <!-- nombre de vue sur la maison-->
 
@@ -29,19 +29,19 @@
             </div>
             <div class="post-content">
                 <!-- Titre de la maison-->
-                <h2 class="title-single"> A digital prescription for the pharma industry</h2>
+                <h2 class="title-single">{{ l_propriete.titre }}</h2>
             </div>
             <div class="blo-singl mb-4">
                 <ul class="blog-single-author-date align-items-center">
                     <!-- lieu ou se trouve la maison  -->
                     <li>
-                        <p>Unnamed road, San Francisco, CA 94102</p>
+                        <p>{{ l_propriete.lieu }}</p>
                     </li>
 
                 </ul>
                 <ul class="share-post">
                     <!-- Prix de  la maison-->
-                    <a href="#url" class="cost-estate m-o">12 000 000 Fcfa</a>
+                    <a href="#url" class="cost-estate m-o">{{ l_propriete.prix }} cfa</a>
                 </ul>
             </div>
             <div class="row">
@@ -52,19 +52,19 @@
                                 <div class="item">
                                     <!-- Image 1 de la maison-->
                                     <div class="card">
-                                        <img src="{% static 'images/p1.jpg' %}" class="img-fluid radius-image" alt="image">
+                                        <img src="{{ l_propriete.image1.url }}" class="img-fluid radius-image" alt="image">
                                     </div>
                                 </div>
                                 <div class="item">
                                      <!-- Image 2 de la maison-->
                                     <div class="card">
-                                        <img src="{% static 'images/p2.jpg' %}" class="img-fluid radius-image" alt="image">
+                                        <img src="{{ l_propriete.image2.url }}" class="img-fluid radius-image" alt="image">
                                     </div>
                                 </div>
                                 <div class="item">
                                      <!-- Image 3 de la maison-->
                                     <div class="card">
-                                        <img src="{% static 'images/p3.jpg' %}" class="img-fluid radius-image " alt="image">
+                                        <img src="{{ l_propriete.image3.url }}" class="img-fluid radius-image " alt="image">
                                     </div>
                                 </div>
                             </div>
@@ -72,23 +72,20 @@
                         <!--description-->
 
                         <div class="single-post-content">
-                            <h3 class="post-content-title mb-3">Description</h3>
+                            <h3 class="post-content-title mb-3">{{ l_propriete.nom }}</h3>
                             <!--element de description-->
                             <p class="mb-4">
-                                Lorem model text, and a search for 'lorem ipsum' will uncover many web sites still in their
-                                infancy. Various
-                                versions have evolved over the years, sometimes by accident, sometimes on purpose
-                                injected humour and the like. </p>
+                                {{ l_propriete.description }} </p>
 
                                 <!--propriete detailles-->
                             <div class="single-bg-white">
                                 <h3 class="post-content-title mb-4">Propriete detailles</h3>
                                 <ul class="details-list">
-                                    <li><strong>Salon :</strong> 2 </li>
-                                    <li><strong>Chambres :</strong> 5 </li>
-                                    <li><strong>Salles de bain :</strong> 2 </li>
+                                    <li><strong>Salon :</strong> {{ l_propriete.salon }} </li>
+                                    <li><strong>Chambres :</strong> {{ l_propriete.chambre }} </li>
+                                    <li><strong>Salles de bain :</strong> {{ l_propriete.douche }} </li>
                                     <li><strong>Exterieur materielles :</strong> Brick </li>
-                                    <li><strong>Garages :</strong> 2 </li>
+                                    <li><strong>Garages :</strong> {{ l_propriete.garage }} </li>
                                 </ul>
                             </div>
                             <div class="single-bg-white">
