@@ -4,8 +4,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>haut</title>
-
+    <title>Accueil</title>
+    <link rel="icon" href="{% static "images/logo.png" %}" type="image/png" sizes="100x100">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
   <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
@@ -34,12 +34,8 @@
             <a class="nav-link" href="{% url 'index' %}">Accueil <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'listing' %}">Appartements</a>
+            <a class="nav-link" href="{% url 'listing' %}">Nos Propriétées</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'listing' %}">Villa</a>
-          </li>
-
           <li class="nav-item">
             <a class="nav-link" href="{% url 'about' %}">À propos</a>
           </li>
@@ -105,9 +101,7 @@
 
 
 
-          <span>
-            Scroll
-          </span>
+
         </div>
 
       </div>
@@ -131,11 +125,11 @@
                             {% for propriete in propriete %}
                                 <div class="col-lg-4 col-md-6 best">
                                   <a href="{% url 'detail' propriete.id %}">
-                                    <img class="img-fluid" src="{{ propriete.image2.url }}" alt="">
+                                    <img class="img-fluid" src="{{ propriete.image1.url }}" alt="">
                                           <div class="rentext-listing-category rent"><span>{{ propriete.statu }}</span></div>
                                           <div class="box-content">
-                                              <h3 class="title">${{ propriete.prix }}</h3>
-                                              <span class="post">{{ propriete.quartier }} {{ propriete.quartier }}</span>
+                                              <h3 class="title">{{ propriete.prix }} Fcfa</h3>
+                                              <span class="post">{{ propriete.quartier }}</span>
 
                                       </div>
                                   </a>
@@ -198,7 +192,7 @@
           </div>
           <div class="row pt-md-5 pt-4">
             {% for position in position %}
-              
+
               <div class="col-lg-3 col-md-6 best">
                   <a href="{% url 'listing' %}">
                     <img class="img-fluid" src="{{ position.image.url }}" alt="">
