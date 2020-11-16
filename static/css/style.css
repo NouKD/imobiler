@@ -1580,9 +1580,11 @@ justify-content: space-around;
 }
 #email{
   border-radius:40px 0px 0px 40px;
-  background-color:transparent;
+  background-color:white;
   border:1px;
-  width:10px;
+  width:200px;
+  height:45px;
+
 
 }
 #email ::before{
