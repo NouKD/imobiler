@@ -59,9 +59,9 @@ def ajout(request):
     return render(request, 'pages/ajouter.html', datas)
 
 def search(request):
-    qu = request.GET.get['q']
-    propriete = models.Propriete.objects.filter(
-        Q(types__icontains=qu) |
+    qu = request.GET.get('q')
+    print('\n------> ', qu)
+    propriete = Propriete.objects.filter(
         Q(description__icontains=qu) |
         Q(ville__icontains=qu) |
         Q(quartier__icontains=qu)
@@ -71,4 +71,4 @@ def search(request):
         'propriete': propriete,
     }
 
-    return render(request, 'pages/search.html', datas)
+    return render(request, 'pages/listing.html', datas)

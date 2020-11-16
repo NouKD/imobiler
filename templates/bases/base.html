@@ -56,7 +56,8 @@
           </ul>
           <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search' %}">
             {% csrf_token %}
-            <input class="form-control mr-sm-2 " id="searchbar" type="search" placeholder="Logement ..." aria-label="Search" nam='q'>
+        
+            <input class="form-control mr-sm-2 " id="searchbar" type="search" placeholder="Logement ..." aria-label="Search" name='q'>
             <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Recherche</button>
           </form>
         </div>
