@@ -64,6 +64,7 @@ def search(request):
     propriete = Propriete.objects.filter(
         Q(description__icontains=qu) |
         Q(ville__icontains=qu) |
+        Q(statu__icontains=qu) |
         Q(quartier__icontains=qu)
         )
 

@@ -44,8 +44,10 @@
           </li>
 
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2 " id="searchbar" type="search" placeholder="Logement ..." aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search' %}">
+          {% csrf_token %}
+      
+          <input class="form-control mr-sm-2 " id="searchbar" type="search" placeholder="Logement ..." aria-label="Search" name='q'>
           <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Recherche</button>
         </form>
       </div>
@@ -66,13 +68,13 @@
 
 
 
-          <form action="#" class="w3l-cover-3-gd" method="GET">
+          <form action="{% url 'search' %}" class="w3l-cover-3-gd" method="GET">
+            {% csrf_token %}
 
 
-
-            <input  type="search" name="text" placeholder="Entrez des mots clés" required="">
+            <input  type="search" name="q" placeholder="Entrez des mots clés" required="">
             <span class="input-group-btn">
-              <select  class="btn btn-default" name="ext" required="">
+              <select  class="btn btn-default" name="q" required="">
                 <option selected="">Bureau</option>
                 <option>Villa</option>
                 <option>Appartement</option>
@@ -84,16 +86,16 @@
               </select>
             </span>
             <span class="input-group-btn">
-              <select  class="btn btn-default" name="ext" required="">
-                <option selected="">Choisissez le pays</option>
+              <select  class="btn btn-default" name="q" required="">
+                <option selected="">Choisissez le quartier</option>
 
-                <option>Australie</option>
-                <option>Londres</option>
-                <option>Inde</option>
-                <option>Bangladesh</option>
-                <option>Arabie Saoudite</option>
-                <option>Amérique</option>
-                <option>Srilanka</option>
+                <option>COCODY</option>
+                <option>angre</option>
+                <option>Treichville</option>
+                <option>deux plateaux</option>
+                <option>macory</option>
+                <option>koumassi</option>
+                <option>abobo</option>
               </select>
             </span>
             <button  type="submit" class="btn-primary">Chercher</button>

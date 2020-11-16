@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="description ">
-                            <h4 class="team-name">{{ propriete.nom }}</h4>
+                            <h4 class="team-name">{{ propriete.titre }}</h4>
                             <p>{{ propriete.quartier }}</p>
 
                             <ul>
@@ -73,30 +73,31 @@
            <!-- *********************** -->
            <div class="pagination-profil">
             <div class="circle">
-                <span class="number">
+                {% if propriete.has_previous %}
+                <a href="?page={{ propriete.previous_page_number }}"></a><span class="number">
                     <i class="fa fa-arrow-left"></i>
-                </span>
+                </span></a>
+                {% endif %}
             </div>
-            <div class="circle active">
-                <span class="number">1</span>
-            </div>
+            
+            {% for num in propriete.paginator.page_range %}
+            {% if num == articles.number %}
             <div class="circle">
-                <span class="number">2</span>
+                <a href="?page={{ num }}"><span class="number">{{ num }}</span></a>
             </div>
+            {% else %}
             <div class="circle">
-                <span class="number">3</span>
+                <a href="?page={{ num }}"><span class="number">{{ num }}</span></a>
             </div>
-            <div class="circle">
-                <span class="number">4</span>
-            </div>
-            <div class="circle">
-                <span class="number">5</span>
-            </div>
+            {% endif %}
+            {% endfor %}
+            {% if propriete.has_next %}
             <div class="circle">
                 <span class="number">
-                    <i class="fa fa-arrow-right"></i>
+                    <a href="?page={{ propriete.next_page_number }}"></a><i class="fa fa-arrow-right"></i></a>
                 </span>
             </div>
+            {% endif %}
         </div>
         </div>
     </section>

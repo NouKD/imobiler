@@ -1,14 +1,30 @@
 *{
     box-sizing: border-box;
 }
+.owl-next span, .owl-prev span {
+  transform: translateY(-20px);
+}
+.card{
+  max-height: 561px;
+}
+.sphinx{
+  margin-top: 80px;
+}
 /*propriete body a suprimer a la fusion*/
 body{
     background-color: #121725;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
 }
+.card{
+  max-height: 539px;
+}
+.card *{
+  z-index: 10;
+}
+
 .yan{
-    margin-top: 105px;
+    margin-top: 100px !important;
     /*margin top a enlever lors de la fusion*/
     display: flex;
     justify-content: space-between;
@@ -25,9 +41,8 @@ body{
   padding:0px;
   margin:0px;
   width: 100%;
-
+  z-index: 10000;
   background: url(../images/banner.jpg) ;
-  z-index: 1;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
