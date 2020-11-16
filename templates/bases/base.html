@@ -4,11 +4,11 @@
 <head>
 
     <title>
-        
+
         {% block title %}
-            
+
         {% endblock title %}
-            
+
     </title>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-min.css' %}">
     <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    
+
     {% block css %}
-        
+
     {% endblock css %}
-        
+
     <script src="https://use.fontawesome.com/42b4ff5678.js' %}"></script>
 
 
@@ -44,7 +44,7 @@
               <a class="nav-link" href="{% url 'index' %}">Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'listing' %}">Nos Propriete</a>
+              <a class="nav-link" href="{% url 'listing' %}">Nos Propriétées</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">À propos</a>
@@ -68,7 +68,7 @@
 
 
 {% block content %}
-    
+
 {% endblock content %}
 
 
@@ -102,11 +102,11 @@
       <div class="form-group">
         {% csrf_token %}
 
-        <input 
-        type="email" 
-        id="email" 
-        name="subscribe" 
-        placeholder="Enter your email" 
+        <input
+        type="email"
+        id="email"
+        name="subscribe"
+        placeholder="Enter your email"
         required>
         <button class="btn btn-style " id="emailbtn">S'abonnez</button>
       </div>
@@ -136,7 +136,7 @@
 <!-- ***************** mon footer ******************-->
 
 
-    
+
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 
 <script src="{% static 'js/theme-change.js' %}"></script><!-- theme switch js (light and dark)-->
@@ -172,6 +172,6 @@ $(window).scroll(function(){
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 {% block js %}
-    
+
 {% endblock js %}
-</html>      
+</html>
