@@ -4,8 +4,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>haut</title>
-
+    <title>Accueil</title>
+    <link rel="icon" href="{% static "images/logo.png" %}" type="image/png" sizes="100x100">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
   <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
@@ -125,11 +125,11 @@
                             {% for propriete in propriete %}
                                 <div class="col-lg-4 col-md-6 best">
                                   <a href="{% url 'detail' propriete.id %}">
-                                    <img class="img-fluid" src="{{ propriete.image2.url }}" alt="">
+                                    <img class="img-fluid" src="{{ propriete.image1.url }}" alt="">
                                           <div class="rentext-listing-category rent"><span>{{ propriete.statu }}</span></div>
                                           <div class="box-content">
-                                              <h3 class="title">${{ propriete.prix }}</h3>
-                                              <span class="post">{{ propriete.quartier }} {{ propriete.quartier }}</span>
+                                              <h3 class="title">{{ propriete.prix }} Fcfa</h3>
+                                              <span class="post">{{ propriete.quartier }}</span>
 
                                       </div>
                                   </a>

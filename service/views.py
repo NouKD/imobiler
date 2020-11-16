@@ -59,11 +59,11 @@ def ajout(request):
     return render(request, 'pages/ajouter.html', datas)
 
 def search(request):
-    qu = request.POST.get['q']
+    qu = request.GET.get['q']
     propriete = models.Propriete.objects.filter(
-        Q(types__icontains=qu) | 
-        Q(description__icontains=qu) | 
-        Q(ville__icontains=qu) | 
+        Q(types__icontains=qu) |
+        Q(description__icontains=qu) |
+        Q(ville__icontains=qu) |
         Q(quartier__icontains=qu)
         )
 
