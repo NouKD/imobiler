@@ -7,8 +7,15 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
 }
+.card{
+  max-height: 539px;
+}
+.card *{
+  z-index: 10;
+}
+
 .yan{
-    margin-top: 105px;
+    margin-top: 100px !important;
     /*margin top a enlever lors de la fusion*/
     display: flex;
     justify-content: space-between;
