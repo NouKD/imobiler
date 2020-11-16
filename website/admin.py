@@ -80,6 +80,17 @@ class PresentationAdmin(Action):
     def images_view(self, obj):
         return mark_safe('<img src="{url}" style="height:50px; width:100px">'.format(url=obj.image.url))
 
+class EmplacementAdmin(Action):
+    list_display = ('nom', 'date_add', 'date_update', 'status')
+    list_filter = ('nom', )
+    search_fields = ('nom', )
+    date_hierarchy = 'date_add'
+    list_display_links = ['nom']
+    ordering = ['nom']
+    list_per_page = 10
+    fieldsets = [('Info ', {'fields': ['nom', 'image']}),
+                 ('Standard', {'fields': ['status']})
+                 ]
 
 
 
@@ -92,3 +103,4 @@ _register(models.NewsLetter, NewsLetterAdmin)
 _register(models.SocialAccount, SocialAccountAdmin)
 _register(models.Presentation, PresentationAdmin)
 _register(models.SiteInfo, SiteInfoAdmin)
+_register(models.Emplacement, EmplacementAdmin)

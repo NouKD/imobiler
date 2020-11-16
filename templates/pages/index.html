@@ -128,77 +128,19 @@
                               <h3 class="title-big">Top Properties</h3>
                           </div>
                           <div class="row pt-md-5 pt-4">
-                              <div class="col-lg-4 col-md-6 best">
-                                  <a href="details.html">
-                                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                                          <div class="rentext-listing-category rent"><span>A Louer</span></div>
+                            {% for propriete in propriete %}
+                                <div class="col-lg-4 col-md-6 best">
+                                  <a href="{% url 'detail' propriete.id %}">
+                                    <img class="img-fluid" src="{{ propriete.image2.url }}" alt="">
+                                          <div class="rentext-listing-category rent"><span>{{ propriete.statu }}</span></div>
                                           <div class="box-content">
-                                              <h3 class="title">$25,00,000</h3>
-                                              <span class="post">51 Merrick Way, Coral Gables, USA</span>
+                                              <h3 class="title">${{ propriete.prix }}</h3>
+                                              <span class="post">{{ propriete.quartier }} {{ propriete.quartier }}</span>
 
                                       </div>
                                   </a>
                               </div>
-                              <div class="col-lg-4 col-md-6 best">
-                                  <a href="details.html">
-                                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                                          <div class="rentext-listing-category rent"><span>A Louer</span></div>
-                                          <div class="box-content">
-                                              <h3 class="title">$25,00,000</h3>
-                                              <span class="post">51 Merrick Way, Coral Gables, USA</span>
-
-                                      </div>
-                                  </a>
-                              </div>
-                              <div class="col-lg-4 col-md-6 best">
-                                  <a href="details.html">
-                                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                                          <div class="rentext-listing-category rent"><span>A Louer</span></div>
-                                          <div class="box-content">
-                                              <h3 class="title">$25,00,000</h3>
-                                              <span class="post">51 Merrick Way, Coral Gables, USA</span>
-
-                                      </div>
-                                  </a>
-                              </div>
-                              <div class="col-lg-4 col-md-6 best">
-                                  <a href="details.html">
-                                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                                          <div class="rentext-listing-category rent"><span>A Louer</span></div>
-                                          <div class="box-content">
-                                              <h3 class="title">$25,00,000</h3>
-                                              <span class="post">51 Merrick Way, Coral Gables, USA</span>
-
-                                      </div>
-                                  </a>
-                              </div>
-                              <div class="col-lg-4 col-md-6 best">
-                                  <a href="details.html">
-                                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                                          <div class="rentext-listing-category rent"><span>A Louer</span></div>
-                                          <div class="box-content">
-                                              <h3 class="title">$25,00,000</h3>
-                                              <span class="post">51 Merrick Way, Coral Gables, USA</span>
-
-                                      </div>
-                                  </a>
-                              </div>
-                              <div class="col-lg-4 col-md-6 best">
-                                  <a href="details.html">
-                                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                                          <div class="rentext-listing-category rent"><span>A Louer</span></div>
-                                          <div class="box-content">
-                                              <h3 class="title">$25,00,000</h3>
-                                              <span class="post">51 Merrick Way, Coral Gables, USA</span>
-
-                                      </div>
-                                  </a>
-                              </div>
-
-
-
-
-
+                            {% endfor %}
 
                           </div>
                       </div>
@@ -221,9 +163,8 @@
                 <i class="fa fa-home"></i>
             </div>
             <h4>Acheter une maison</h4>
-            <p>Vivamus a ligula quam. Ut blandit eu leo ​​non.
-               Duis sed dolor amet ipsum primis dans faucibus orci.</p>
-             <p><a href="#">Lire la suite </a><span></span></p>
+            <p>procuree vous votre chez vous avec my hous les meilleur maison sur...</p>
+             <p><a href="{% url 'listing' %}">Lire la suite </a><span></span></p>
 
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 house" id="serv">
@@ -231,9 +172,8 @@
                 <i class="fa fa-search"></i>
             </div>
             <h4>Louer une maison</h4>
-            <p>Vivamus a ligula quam. Ut blandit eu leo ​​non.
-               Duis sed dolor amet ipsum primis dans faucibus orci.</p>
-             <p><a href="#">Lire la suite </a><span></span></p>
+            <p>vous voulez louee une maison avec tous les comoditer c'est chez nous.</p>
+             <p><a href="{% url 'about' %}">Lire la suite </a><span></span></p>
 
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 house" id="serv">
@@ -241,9 +181,8 @@
                 <i class="fa fa-search"></i>
             </div>
             <h4>Voir les quatiers</h4>
-            <p>Vivamus a ligula quam. Ut blandit eu leo ​​non.
-               Duis sed dolor amet ipsum primis dans faucibus orci.</p>
-             <p><a href="#">Lire la suite </a><span></span></p>
+            <p>les quatiers les plus ip a des kilometre a la ronde .</p>
+             <p><a href="{% url 'listing' %}">Lire la suite </a><span></span></p>
 
         </div>
 
@@ -258,75 +197,17 @@
             <h2>Emplacements populaires</h2>
           </div>
           <div class="row pt-md-5 pt-4">
+            {% for position in position %}
+              
               <div class="col-lg-3 col-md-6 best">
-                  <a href="property-single.html">
-                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
+                  <a href="{% url 'listing' %}">
+                    <img class="img-fluid" src="{{ position.image.url }}" alt="">
                     <div class="box-content">
-                        <h4 class="title">Abidjan</h4>
+                        <h4 class="title">{{ position.nom }}</h4>
                 </div>
                   </a>
               </div>
-              <div class="col-lg-3 col-md-6 best">
-                  <a href="property-single.html">
-                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                    <div class="box-content">
-                        <h4 class="title">Abidjan</h4>
-                </div>
-                  </a>
-              </div>
-              <div class="col-lg-3 col-md-6 best">
-                  <a href="property-single.html">
-                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                    <div class="box-content">
-                        <h4 class="title">Abidjan</h4>
-                </div>
-                  </a>
-              </div>
-              <div class="col-lg-3 col-md-6 best">
-                  <a href="property-single.html">
-                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                    <div class="box-content">
-                        <h4 class="title">Abidjan</h4>
-                </div>
-                  </a>
-              </div>
-              <div class="col-lg-3 col-md-6 best">
-                  <a href="property-single.html">
-                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                    <div class="box-content">
-                        <h4 class="title">Abidjan</h4>
-                </div>
-                  </a>
-              </div>
-              <div class="col-lg-3 col-md-6 best">
-                  <a href="property-single.html">
-                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                    <div class="box-content">
-                        <h4 class="title">Abidjan</h4>
-                </div>
-                  </a>
-              </div>
-              <div class="col-lg-3 col-md-6 best">
-                  <a href="property-single.html">
-                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                    <div class="box-content">
-                        <h4 class="title">Abidjan</h4>
-                </div>
-                  </a>
-              </div>
-              <div class="col-lg-3 col-md-6 best">
-                  <a href="property-single.html">
-                    <img class="img-fluid" src="{% static 'images/p1.jpg' %}" alt="">
-                          <div class="box-content">
-                              <h4 class="title">Abidjan</h4>
-                      </div>
-                  </a>
-              </div>
-
-
-
-
-
+            {% endfor %}
 
           </div>
 
@@ -338,18 +219,16 @@
           <div class="container">
               <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 " id="ab">
-                      <img src="{% static 'images/l1.jpg' %}" alt="about img" class="img-fluid">
+                      <img src="{{ presentation.image.url }}" alt="about img" class="img-fluid">
                   </div>
 
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 part--left" id="ab">
                       <div class="title">
                           <h6>QUI NOUS SOMMES</h6>
-                          <h3>Nous valorisons les relations clients</h3>
+                          <h3>{{ presentation.nom }}</h3>
                       </div>
 
-                      <p class="mt-5">Nous avons plus de 15 ans d'expérience, plus de 20 000 personnes travaillent
-                         pour nous dans plus de 70 pays à travers le monde.
-                         En apprendre plus sur notre travail!</p>
+                      <p class="mt-5">{{ presentation.description }}</p>
 
 
 
@@ -404,79 +283,6 @@
       </div>
       </div>
       </div>
-      <!-- ***************** conseils ******************-->
-
-  <div class="bazar">
-
-
-      <div class="col-10 conseils">
-
-        <div class="row hack">
-          <div class="col-lg-3 col-md-6 mt-md-0 mt-5 hanti" >
-
-                  <div class="col-12 image">
-                    <img src="{% static 'images/p1.jpg' %}" alt="">
-
-                  </div>
-                  <div class="date">
-                    <span><small>2020</small></span>
-                    <p><h5>16</h5></p>
-                    <span><small>Decembre</small></span>
-                  </div>
-                  <div class="conseilcont">
-                      <p>Non classé</p>
-                      <h5><a href='#'>Les banques de détail
-                        se réveillent au crédit numérique cette année</a></h5 >
-                        <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
-                  </div>
-
-          </div>
-          <div class="col-lg-3 col-md-6 mt-md-0 mt-5 hanti" >
-
-                  <div class="col-12 image">
-                    <img src="{% static 'images/p1.jpg' %}" alt="">
-
-                  </div>
-                  <div class="date">
-                    <span><small>2020</small></span>
-                    <p><h5>16</h5></p>
-                    <span><small>Decembre</small></span>
-                  </div>
-                  <div class="conseilcont">
-                      <p>Non classé</p>
-                      <h5><a href='#'>Les banques de détail
-                        se réveillent au crédit numérique cette année</a></h5 >
-                        <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
-                  </div>
-
-          </div>
-          <div class="col-lg-3 col-md-6 mt-md-0 mt-5 hanti" >
-
-                  <div class="col-12 image">
-                    <img src="{% static 'images/p1.jpg' %}" alt="">
-
-                  </div>
-                  <div class="date">
-                    <span><small>2020</small></span>
-                    <p><h5>16</h5></p>
-                    <span><small>Decembre</small></span>
-                  </div>
-                  <div class="conseilcont">
-                      <p>Non classé</p>
-                      <h5><a href='#'>Les banques de détail
-                        se réveillent au crédit numérique cette année</a></h5 >
-                        <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
-                  </div>
-
-          </div>
-
-
-          </div>
-        </div>
-      </div>
-
-  </div>
-      <!-- ***************** conseils ******************-->
 
 
       <!-- ***************** mon footer ******************-->

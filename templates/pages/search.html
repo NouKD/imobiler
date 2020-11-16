@@ -1,0 +1,70 @@
+<div class="container">
+   <!-- {% if nombre_resultat > 1 %}
+    <h3 class='search_rapport search_rapport_success'>
+        {{ nombre_resultat }} 
+        résultat{{ nombre_resultat|pluralize }} 
+        trouvé{{ nombre_resultat|pluralize }} 
+        pour “{{ q }}”
+    </h3>
+{% else %}
+    <h3 class='search_rapport search_rapport_null'>
+        Aucun résultat trouvé pour “{{ q }}”
+    </h3>
+{% endif %}-->
+<form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'search' %}">
+    {% csrf_token %}
+    <input class="form-control mr-sm-2 " id="searchbar" type="search" placeholder="Logement ..." aria-label="Search" nam='search'>
+    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Recherche</button>
+  </form>
+
+    <div class="row">
+        
+        {% for propriete in propriete %}
+                               
+         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
+           <a href="{% url 'detail' propriete.id %}">
+             <div class="card--listing">
+                 <div class="illustration">
+                     <img src="{{ propriete.image1.url }}" alt="about img" class="img-fluide">
+
+                     <div class="rent--buy">
+                         <span id="bl">{{ propriete.statu }}</span>
+
+                     </div>
+
+                     <div class="price">
+                         <h2>{{ propriete.prix }}cfa</h2>
+                     </div>
+                 </div>
+
+                 <div class="description ">
+                     <h4 class="team-name">{{ propriete.nom }}</h4>
+                     <p>{{ propriete.quartier }}</p>
+
+                     <ul>
+                         <li><span><i class="fa fa-bed"></i>&nbsp; {{ propriete.chambre }} chambres</span></li>
+                         <li><span>&nbsp; &nbsp;</span></li>
+                         <li><span><i class="fa fa-bed"></i>&nbsp; {{ propriete.douche }} salon</span></li>
+
+                     </ul>
+
+
+                     <div class="seilor mt-4">
+                         <div class="img-seilor">
+                             <img src="{{ propriete.agent.image.url }}" alt="img-seilor" class="img-fluid">
+                         </div>
+
+                         <div class="descrip-seilor">
+                             <h5>{{ propriete.agent.nom }}</h5>
+                             <p>{{ propriete.agent.fonction }}</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             </a>
+         </div>
+         {% endfor %}
+    </div>      
+      
+      
+      

@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
 from django.core.validators import EmailValidator
-from .models import Presentation, Contact, SiteInfo, SocialAccount, NewsLetter
+from .models import Presentation, Contact, SiteInfo, SocialAccount, NewsLetter, Emplacement
 from service.models import Propriete, Services, Agent
 from .forms import ContactForm
 # Create your views here.
 def index(request):
+    propriete = Propriete.objects.filter(status=True)[:6]
+    position = Emplacement.objects.filter(status=True)[:8]
+    presentation = Presentation.objects.filter(status=True).last
     datas = {
-
+        'propriete' : propriete,
+        'position' : position,
+        'presentation' : presentation,
     }
     return render(request, 'pages/index.html', datas)
 

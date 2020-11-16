@@ -79,6 +79,22 @@ class Contact(models.Model):
     def __str__(self):
         return self.nom
 
+class Emplacement(models.Model):
+    nom = models.CharField(max_length=255)
+    image = models.ImageField(null=True)
+
+    date_add = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+    status = models.BooleanField(default=True)
+
+
+    class Meta:
+
+        verbose_name = 'Emplacement'
+        verbose_name_plural = 'Emplacements'
+
+    def __str__(self):
+        return self.nom
 
 class NewsLetter(models.Model):
     email = models.EmailField()
