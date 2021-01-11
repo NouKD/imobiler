@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <title>Accueil</title>
-    <link rel="icon" href="{% static "images/logo.png" %}" type="image/png" sizes="100x100">
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png" sizes="100x100">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
   <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
@@ -46,7 +46,9 @@
         </ul>
         <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search' %}">
           {% csrf_token %}
-      
+          <select  class="btn btn-default" required="">
+                <option class="btn btn-default" selected="">{{ object_list.title }}</option>
+                <option>Anglais</option>
           <input class="form-control mr-sm-2 " id="searchbar" type="search" placeholder="Logement ..." aria-label="Search" name='q'>
           <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Recherche</button>
         </form>

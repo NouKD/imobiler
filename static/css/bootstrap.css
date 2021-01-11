@@ -2507,6 +2507,7 @@ textarea.form-control {
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
+  margin-right: 10px;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
     'service.apps.ServiceConfig',
+    'parler',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +104,22 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+PARLER_DEFAULT_ACTIVATE = True
+
+PARLER_DEFAULT_LANGUAGE_CODE = 'fr'
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'fr',},
+        {'code': 'en-us',},
+        {'code': 'it',},
+        {'code': 'nl',},
+    ),
+    'default': {
+        'fallback': 'en',             # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+        'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

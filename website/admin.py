@@ -92,7 +92,10 @@ class EmplacementAdmin(Action):
                  ('Standard', {'fields': ['status']})
                  ]
 
-
+class TraductionAdmin(Action):
+    list_display = ('translations',)
+    list_per_page = 10
+    
 
 def _register(model, admin_class):
     admin.site.register(model, admin_class)
@@ -104,3 +107,4 @@ _register(models.SocialAccount, SocialAccountAdmin)
 _register(models.Presentation, PresentationAdmin)
 _register(models.SiteInfo, SiteInfoAdmin)
 _register(models.Emplacement, EmplacementAdmin)
+_register(models.Traduction, TraductionAdmin)
