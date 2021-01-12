@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -120,6 +121,17 @@ PARLER_LANGUAGES = {
         'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
     }
 }
+
+LANGUAGE_CODE = 'fr'
+
+LANGUAGES = (
+    ('en', _("English")),
+    ('en-us', _("US English")),
+    ('it', _('Italian')),
+    ('nl', _('Dutch')),
+    ('fr', _('French')),
+    ('es', _('Spanish')),
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

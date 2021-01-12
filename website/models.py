@@ -114,10 +114,7 @@ class NewsLetter(models.Model):
 
 class Traduction(TranslatableModel):
     translations = TranslatedFields(
-        title = models.CharField(max_length=200),
-        date_add = models.DateTimeField(auto_now_add=True),
-        date_update = models.DateTimeField(auto_now=True),
-        status = models.BooleanField(default=True)
+        title = models.CharField(max_length=200)
         )
 
     class Meta():
