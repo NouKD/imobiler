@@ -110,17 +110,35 @@ PARLER_DEFAULT_ACTIVATE = True
 PARLER_DEFAULT_LANGUAGE_CODE = 'fr'
 
 PARLER_LANGUAGES = {
-    None: (
-        {'code': 'fr',},
+    # Global site
+    1: (
+        {'code': 'en',},
         {'code': 'en-us',},
         {'code': 'it',},
         {'code': 'nl',},
     ),
+    # US site
+    2: (
+        {'code': 'en-us',},
+        {'code': 'en',},
+    ),
+    # IT site
+    3: (
+        {'code': 'it',},
+        {'code': 'en',},
+    ),
+    # NL site
+    3: (
+        {'code': 'nl',},
+        {'code': 'en',},
+    ),
     'default': {
-        'fallback': 'en',             # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+        'fallbacks': ['en'],          # defaults to PARLER_DEFAULT_LANGUAGE_CODE
         'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
     }
 }
+
+PARLER_SHOW_EXCLUDED_LANGUAGE_TABS = False
 
 LANGUAGE_CODE = 'fr'
 

@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n parler_tags %}
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -23,7 +24,21 @@
 
       <div class="col-lg-10 col-md-10 offset-lg-1 header">
       <nav class="navbar navbar-expand-lg navbar-dark " id="navb">
-      <a class="navbar-brand" href="#"><img src='{% static "images/logo.png" %}' width='110px' height='80px'></img></a>
+        <ul>
+            {% for lang_code, title in LANGUAGES %}
+                {% get_language_info for lang_code as lang %}
+                {% get_translated_url lang_code as tr_url %}
+                <li> test </li>
+                {% if tr_url %}
+                <li {% if lang_code == LANGUAGE_CODE %} class="is-selected"{% endif %}>
+                <a href="{{ tr_url }}" hreflang="{{ lang_code }}">
+                {{object_list.language}}{{ lang.name_local|capfirst }}
+                </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+      <a class="navbar-brand" href="#"><img src='{% static "images/logo.png" %}' width='110px' height='80px'></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -47,9 +62,10 @@
         <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search' %}">
           {% csrf_token %}
           <select  class="btn btn-default" required="">
-            <option class="btn btn-default" selected="">francais</option>
-            <option>Anglais</option>
-          
+          {% for item in langue %}
+            <option selected="">{{ item.title }}</option>
+            <!--<option>Anglais</option>-->
+          {% endfor %}
           <input class="form-control mr-sm-2 " id="searchbar" type="search" placeholder="Logement ..." aria-label="Search" name='q'>
           <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Recherche</button>
         </form>

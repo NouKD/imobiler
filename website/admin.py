@@ -2,6 +2,8 @@ from django.contrib import admin
 from . import models
 from django.utils.safestring import mark_safe
 from actions.action import Action
+from .models import Traduction, TraductionTranslation
+from parler.admin import TranslatableAdmin, SortedRelatedFieldListFilter
 
 # Register your models here.
 
@@ -92,10 +94,20 @@ class EmplacementAdmin(Action):
                  ('Standard', {'fields': ['status']})
                  ]
 
-class TraductionAdmin(Action):
-    list_display = ('translations',)
-    list_per_page = 10
-    
+#class TraductionAdmin(Action):
+#    list_display = ('title',)
+#    list_per_page = 10
+
+class TraductionAdmin(TranslatableAdmin):
+    search_fields = ('translations__title',)
+    #list_filter = (('related_field_name', SortedRelatedFieldListFilter),)
+    def get_prepopulated_fields(self, request, obj=None):
+        return {
+            'slug': ('title',)
+        }
+#admin.site.register(Traduction)
+admin.site.register(TraductionTranslation)
+
 
 def _register(model, admin_class):
     admin.site.register(model, admin_class)

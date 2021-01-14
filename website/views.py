@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.validators import EmailValidator
-from .models import Presentation, Contact, SiteInfo, SocialAccount, NewsLetter, Emplacement, Traduction
+from .models import Presentation, Contact, SiteInfo, SocialAccount, NewsLetter, Emplacement, Traduction, TraductionTranslation
 from service.models import Propriete, Services, Agent
 from .forms import ContactForm
 from parler.utils.context import switch_language
@@ -10,18 +10,18 @@ def index(request):
     position = Emplacement.objects.filter(status=True)[:8]
     presentation = Presentation.objects.filter(status=True).last
     social = SocialAccount.objects.filter(status=True)[:4]
-    object_list = Traduction.objects.prefetch_related('translations')
-    #object_list[0].title
-    #with switch_language(Traduction, 'fr'):
-    #    print (Traduction.title)
-    #spctrans = Traduction.safe_translation_getter('title', language_code='fr')
+    langue = Traduction.objects.translated('fr').order_by('translations__title')
+    object_list = TraductionTranslation.objects.prefetch_related('translations')
+    #for obj in object_list:
+    #    print (obj.title)
+    
     datas = {
         'propriete' : propriete,
         'position' : position,
         'presentation' : presentation,
         'social' : social,
+        'langue' : langue,
         'object_list': object_list,
-    #    'spctrans': spctrans,
     }
     return render(request, 'pages/index.html', datas)
 

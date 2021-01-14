@@ -1,5 +1,5 @@
 from django.db import models
-from parler.models import TranslatableModel, TranslatedFields
+from parler.models import TranslatableModel, TranslatedFieldsModel, TranslatedField
 
 # Create your models here.
 
@@ -113,12 +113,22 @@ class NewsLetter(models.Model):
 
 
 class Traduction(TranslatableModel):
-    translations = TranslatedFields(
-        title = models.CharField(max_length=200)
-        )
-
+    title = TranslatedField(any_language=True,)
+    slug = TranslatedField()
+    
+    date_add = models.DateTimeField(auto_now_add=True, null=True)
+    date_update = models.DateTimeField(auto_now=True, null=True)
+    status = models.BooleanField(default=True, null=True)
+    
     class Meta():
         verbose_name = 'Traduction'
         verbose_name_plural = 'Traductions'
+        
     def __unicode__(self):
         return self.title
+    
+class TraductionTranslation(TranslatedFieldsModel):
+    
+    master = models.ForeignKey(Traduction, related_name='translations', null=True, on_delete=models.CASCADE)
+    title = models.CharField("Title", max_length=200, null=True)
+    slug = models.SlugField("Slug", null=True)
